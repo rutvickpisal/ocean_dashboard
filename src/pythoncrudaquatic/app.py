@@ -3,10 +3,12 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from .db import pool
+from .db import settings
+from .routes.auth import router as auth_router
 from .routes.router import router
-from fastapi.middleware.cors import CORSMiddleware
 
 tags_metadata = [
     {"name": "Health", "description": "Is the API (and its database) alive?"},
@@ -37,8 +39,10 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
+    allow_credentials=True,          # new: lets the browser send the cookie
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 app.include_router(router)
+app.include_router(auth_router)

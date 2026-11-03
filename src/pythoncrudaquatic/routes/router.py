@@ -12,7 +12,6 @@ from ..schemas import (
     OceanThreatSummary,
     SightingDetail,
     Species,
-    SpeciesCount,
     SpeciesSummary,
     SpeciesHabitat,
     TopHabitat,

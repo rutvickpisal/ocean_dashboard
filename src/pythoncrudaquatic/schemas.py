@@ -96,3 +96,16 @@ class SpeciesSummary(BaseModel):
     total: int
     by_category: list[SpeciesCount]
     by_status: list[SpeciesCount]
+
+
+class AuthTokenResponse(BaseModel):
+    access_token: str
+    token_type: str
+    expires_in: int
+
+
+class AuthUser(BaseModel):
+    id: int
+    username: str
+    email: str | None
+    avatar_url: str | None
