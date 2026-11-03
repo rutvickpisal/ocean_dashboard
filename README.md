@@ -17,6 +17,6 @@ as a compatibility entry point. Each layer has its own package folder:
 
 - `src/pythoncrudaquatic/routes/` — FastAPI paths, query parameters, and response models
 - `src/pythoncrudaquatic/controllers/` — HTTP status handling and request-to-service coordination
-- `src/pythoncrudaquatic/services/` — application workflows and existence checks
+- `src/pythoncrudaquatic/services/` — application workflows and external service integrations
 - `src/pythoncrudaquatic/repositories/` — SQL queries and database access
 - `src/pythoncrudaquatic/db.py` and `src/pythoncrudaquatic/schemas.py` — database setup and response schemas

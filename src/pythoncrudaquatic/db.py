@@ -12,6 +12,12 @@ class Settings(BaseSettings):
 
     database_url: str
     model_config = SettingsConfigDict(env_file=".env")
+    github_client_id: str
+    github_client_secret: str
+    jwt_secret: str
+    frontend_url: str = "http://localhost:5173"
+    cookie_secure: bool = False
+    cookie_samesite: str = "lax"
 
 
 settings = Settings()
